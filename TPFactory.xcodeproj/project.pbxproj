@@ -10,6 +10,7 @@
 		7276CA1218ECB4C500E65873 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7276CA1118ECB4C500E65873 /* XCTest.framework */; };
 		7276CA1318ECB4C500E65873 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7276C9FC18ECB4C500E65873 /* Cocoa.framework */; };
 		7286367318EDF8BB00CAEB82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7286367218EDF8BB00CAEB82 /* Foundation.framework */; };
+		7286369718EDFBD500CAEB82 /* TPFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7276CA0918ECB4C500E65873 /* TPFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -110,8 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				7276CA2718ECB70600E65873 /* src */,
-				7276CA0918ECB4C500E65873 /* TPFactory.h */,
-				7276CA0A18ECB4C500E65873 /* TPFactory.m */,
 				7276CA0318ECB4C500E65873 /* Supporting Files */,
 			);
 			path = TPFactory;
@@ -130,6 +129,8 @@
 		7276CA2718ECB70600E65873 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				7276CA0918ECB4C500E65873 /* TPFactory.h */,
+				7276CA0A18ECB4C500E65873 /* TPFactory.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -153,6 +154,17 @@
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7286369618EDFBCF00CAEB82 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7286369718EDFBD500CAEB82 /* TPFactory.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		7276CA0F18ECB4C500E65873 /* TPFactoryTests */ = {
@@ -179,6 +191,7 @@
 				7286366D18EDF8BB00CAEB82 /* Sources */,
 				7286366E18EDF8BB00CAEB82 /* Frameworks */,
 				7286366F18EDF8BB00CAEB82 /* CopyFiles */,
+				7286369618EDFBCF00CAEB82 /* Headers */,
 				7286369518EDF98100CAEB82 /* ShellScript */,
 			);
 			buildRules = (
