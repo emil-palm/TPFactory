@@ -7,28 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7276C9FD18ECB4C500E65873 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7276C9FC18ECB4C500E65873 /* Cocoa.framework */; };
-		7276CA0718ECB4C500E65873 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7276CA0518ECB4C500E65873 /* InfoPlist.strings */; };
-		7276CA0B18ECB4C500E65873 /* TPFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7276CA0A18ECB4C500E65873 /* TPFactory.m */; };
 		7276CA1218ECB4C500E65873 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7276CA1118ECB4C500E65873 /* XCTest.framework */; };
 		7276CA1318ECB4C500E65873 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7276C9FC18ECB4C500E65873 /* Cocoa.framework */; };
-		7276CA1618ECB4C500E65873 /* TPFactory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7276C9F918ECB4C500E65873 /* TPFactory.framework */; };
-		7276CA1C18ECB4C500E65873 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7276CA1A18ECB4C500E65873 /* InfoPlist.strings */; };
-		7276CA1E18ECB4C500E65873 /* TPFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7276CA1D18ECB4C500E65873 /* TPFactoryTests.m */; };
+		7286367318EDF8BB00CAEB82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7286367218EDF8BB00CAEB82 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		7276CA1418ECB4C500E65873 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7276C9F018ECB4C500E65873 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7276C9F818ECB4C500E65873;
-			remoteInfo = TPFactory;
+/* Begin PBXCopyFilesBuildPhase section */
+		7286366F18EDF8BB00CAEB82 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXContainerItemProxy section */
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7276C9F918ECB4C500E65873 /* TPFactory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TPFactory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7276C9FC18ECB4C500E65873 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		7276C9FF18ECB4C500E65873 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7276CA0018ECB4C500E65873 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -40,27 +36,29 @@
 		7276CA0A18ECB4C500E65873 /* TPFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPFactory.m; sourceTree = "<group>"; };
 		7276CA1018ECB4C500E65873 /* TPFactoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPFactoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7276CA1118ECB4C500E65873 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		7276CA1918ECB4C500E65873 /* TPFactoryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TPFactoryTests-Info.plist"; sourceTree = "<group>"; };
-		7276CA1B18ECB4C500E65873 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7276CA1D18ECB4C500E65873 /* TPFactoryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPFactoryTests.m; sourceTree = "<group>"; };
+		7286367118EDF8BB00CAEB82 /* libTPFactory.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTPFactory.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7286367218EDF8BB00CAEB82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7286368218EDF8BC00CAEB82 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7286368918EDF8BC00CAEB82 /* TPFactoryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TPFactoryTests-Info.plist"; sourceTree = "<group>"; };
+		7286368B18EDF8BC00CAEB82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7286368D18EDF8BC00CAEB82 /* TPFactoryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPFactoryTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7276C9F518ECB4C500E65873 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7276C9FD18ECB4C500E65873 /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7276CA0D18ECB4C500E65873 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7276CA1318ECB4C500E65873 /* Cocoa.framework in Frameworks */,
 				7276CA1218ECB4C500E65873 /* XCTest.framework in Frameworks */,
-				7276CA1618ECB4C500E65873 /* TPFactory.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7286366E18EDF8BB00CAEB82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7286367318EDF8BB00CAEB82 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,7 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				7276CA0218ECB4C500E65873 /* TPFactory */,
-				7276CA1718ECB4C500E65873 /* TPFactoryTests */,
+				7286368718EDF8BC00CAEB82 /* TPFactoryTests */,
 				7276C9FB18ECB4C500E65873 /* Frameworks */,
 				7276C9FA18ECB4C500E65873 /* Products */,
 			);
@@ -80,8 +78,8 @@
 		7276C9FA18ECB4C500E65873 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7276C9F918ECB4C500E65873 /* TPFactory.framework */,
 				7276CA1018ECB4C500E65873 /* TPFactoryTests.xctest */,
+				7286367118EDF8BB00CAEB82 /* libTPFactory.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,6 +89,8 @@
 			children = (
 				7276C9FC18ECB4C500E65873 /* Cocoa.framework */,
 				7276CA1118ECB4C500E65873 /* XCTest.framework */,
+				7286367218EDF8BB00CAEB82 /* Foundation.framework */,
+				7286368218EDF8BC00CAEB82 /* UIKit.framework */,
 				7276C9FE18ECB4C500E65873 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -127,24 +127,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		7276CA1718ECB4C500E65873 /* TPFactoryTests */ = {
-			isa = PBXGroup;
-			children = (
-				7276CA1D18ECB4C500E65873 /* TPFactoryTests.m */,
-				7276CA1818ECB4C500E65873 /* Supporting Files */,
-			);
-			path = TPFactoryTests;
-			sourceTree = "<group>";
-		};
-		7276CA1818ECB4C500E65873 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7276CA1918ECB4C500E65873 /* TPFactoryTests-Info.plist */,
-				7276CA1A18ECB4C500E65873 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		7276CA2718ECB70600E65873 /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,37 +134,27 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		7286368718EDF8BC00CAEB82 /* TPFactoryTests */ = {
+			isa = PBXGroup;
+			children = (
+				7286368D18EDF8BC00CAEB82 /* TPFactoryTests.m */,
+				7286368818EDF8BC00CAEB82 /* Supporting Files */,
+			);
+			path = TPFactoryTests;
+			sourceTree = "<group>";
+		};
+		7286368818EDF8BC00CAEB82 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7286368918EDF8BC00CAEB82 /* TPFactoryTests-Info.plist */,
+				7286368A18EDF8BC00CAEB82 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		7276C9F618ECB4C500E65873 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		7276C9F818ECB4C500E65873 /* TPFactory */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7276CA2118ECB4C500E65873 /* Build configuration list for PBXNativeTarget "TPFactory" */;
-			buildPhases = (
-				7276C9F418ECB4C500E65873 /* Sources */,
-				7276C9F518ECB4C500E65873 /* Frameworks */,
-				7276C9F618ECB4C500E65873 /* Headers */,
-				7276C9F718ECB4C500E65873 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TPFactory;
-			productName = TPFactory;
-			productReference = 7276C9F918ECB4C500E65873 /* TPFactory.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		7276CA0F18ECB4C500E65873 /* TPFactoryTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7276CA2418ECB4C500E65873 /* Build configuration list for PBXNativeTarget "TPFactoryTests" */;
@@ -194,12 +166,29 @@
 			buildRules = (
 			);
 			dependencies = (
-				7276CA1518ECB4C500E65873 /* PBXTargetDependency */,
 			);
 			name = TPFactoryTests;
 			productName = TPFactoryTests;
 			productReference = 7276CA1018ECB4C500E65873 /* TPFactoryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7286367018EDF8BB00CAEB82 /* TPFactory */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7286368F18EDF8BC00CAEB82 /* Build configuration list for PBXNativeTarget "TPFactory" */;
+			buildPhases = (
+				7286366D18EDF8BB00CAEB82 /* Sources */,
+				7286366E18EDF8BB00CAEB82 /* Frameworks */,
+				7286366F18EDF8BB00CAEB82 /* CopyFiles */,
+				7286369518EDF98100CAEB82 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TPFactory;
+			productName = TPFactory;
+			productReference = 7286367118EDF8BB00CAEB82 /* libTPFactory.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -227,57 +216,54 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7276C9F818ECB4C500E65873 /* TPFactory */,
+				7286367018EDF8BB00CAEB82 /* TPFactory */,
 				7276CA0F18ECB4C500E65873 /* TPFactoryTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7276C9F718ECB4C500E65873 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7276CA0718ECB4C500E65873 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7276CA0E18ECB4C500E65873 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7276CA1C18ECB4C500E65873 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXSourcesBuildPhase section */
-		7276C9F418ECB4C500E65873 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+/* Begin PBXShellScriptBuildPhase section */
+		7286369518EDF98100CAEB82 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7276CA0B18ECB4C500E65873 /* TPFactory.m in Sources */,
+			);
+			inputPaths = (
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n\n# Link the \"Current\" version to \"A\"\n/bin/ln -sfh A \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/Current\"\n/bin/ln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Headers\"\n/bin/ln -sfh \"Versions/Current/${PRODUCT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/${PRODUCT_NAME}\"\n\n# The -a ensures that the headers maintain the source modification date so that we don't constantly\n# cause propagating rebuilds of files that import these headers.\n/bin/cp -a \"${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"";
 		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
 		7276CA0C18ECB4C500E65873 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7276CA1E18ECB4C500E65873 /* TPFactoryTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7286366D18EDF8BB00CAEB82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		7276CA1518ECB4C500E65873 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7276C9F818ECB4C500E65873 /* TPFactory */;
-			targetProxy = 7276CA1418ECB4C500E65873 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7276CA0518ECB4C500E65873 /* InfoPlist.strings */ = {
@@ -288,10 +274,10 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		7276CA1A18ECB4C500E65873 /* InfoPlist.strings */ = {
+		7286368A18EDF8BC00CAEB82 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7276CA1B18ECB4C500E65873 /* en */,
+				7286368B18EDF8BC00CAEB82 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -369,36 +355,6 @@
 			};
 			name = Release;
 		};
-		7276CA2218ECB4C500E65873 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TPFactory/TPFactory-Prefix.pch";
-				INFOPLIST_FILE = "TPFactory/TPFactory-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = framework;
-			};
-			name = Debug;
-		};
-		7276CA2318ECB4C500E65873 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TPFactory/TPFactory-Prefix.pch";
-				INFOPLIST_FILE = "TPFactory/TPFactory-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = framework;
-			};
-			name = Release;
-		};
 		7276CA2518ECB4C500E65873 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -439,6 +395,45 @@
 			};
 			name = Release;
 		};
+		7286369018EDF8BC00CAEB82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				DSTROOT = /tmp/TPFactory.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TPFactory/TPFactory-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)Headers";
+				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
+			};
+			name = Debug;
+		};
+		7286369118EDF8BC00CAEB82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				DSTROOT = /tmp/TPFactory.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TPFactory/TPFactory-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)Headers";
+				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -451,15 +446,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7276CA2118ECB4C500E65873 /* Build configuration list for PBXNativeTarget "TPFactory" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7276CA2218ECB4C500E65873 /* Debug */,
-				7276CA2318ECB4C500E65873 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		7276CA2418ECB4C500E65873 /* Build configuration list for PBXNativeTarget "TPFactoryTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -468,6 +454,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		7286368F18EDF8BC00CAEB82 /* Build configuration list for PBXNativeTarget "TPFactory" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7286369018EDF8BC00CAEB82 /* Debug */,
+				7286369118EDF8BC00CAEB82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

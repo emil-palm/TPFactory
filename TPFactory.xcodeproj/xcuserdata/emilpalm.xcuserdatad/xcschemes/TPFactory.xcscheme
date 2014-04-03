@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7276C9F818ECB4C500E65873"
-               BuildableName = "TPFactory.framework"
+               BlueprintIdentifier = "7286367018EDF8BB00CAEB82"
+               BuildableName = "libTPFactory.a"
                BlueprintName = "TPFactory"
                ReferencedContainer = "container:TPFactory.xcodeproj">
             </BuildableReference>
