@@ -26,7 +26,8 @@
 		7276CA1318ECB4C500E65873 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7276C9FC18ECB4C500E65873 /* Cocoa.framework */; };
 		7286367318EDF8BB00CAEB82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7286367218EDF8BB00CAEB82 /* Foundation.framework */; };
 		7286369718EDFBD500CAEB82 /* TPFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7276CA0918ECB4C500E65873 /* TPFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7286369F18EE001600CAEB82 /* TPFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7276CA0A18ECB4C500E65873 /* TPFactory.m */; };
+		728636A218EE00FC00CAEB82 /* TPProtocolFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 728636A018EE00FC00CAEB82 /* TPProtocolFactory.h */; };
+		728636A318EE00FC00CAEB82 /* TPProtocolFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 728636A118EE00FC00CAEB82 /* TPProtocolFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +61,6 @@
 		7276CA0618ECB4C500E65873 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7276CA0818ECB4C500E65873 /* TPFactory-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TPFactory-Prefix.pch"; sourceTree = "<group>"; };
 		7276CA0918ECB4C500E65873 /* TPFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPFactory.h; sourceTree = "<group>"; };
-		7276CA0A18ECB4C500E65873 /* TPFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPFactory.m; sourceTree = "<group>"; };
 		7276CA1018ECB4C500E65873 /* TPFactoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPFactoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7276CA1118ECB4C500E65873 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7286367118EDF8BB00CAEB82 /* libTPFactory.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTPFactory.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +69,8 @@
 		7286368918EDF8BC00CAEB82 /* TPFactoryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TPFactoryTests-Info.plist"; sourceTree = "<group>"; };
 		7286368B18EDF8BC00CAEB82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7286368D18EDF8BC00CAEB82 /* TPFactoryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPFactoryTests.m; sourceTree = "<group>"; };
+		728636A018EE00FC00CAEB82 /* TPProtocolFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPProtocolFactory.h; sourceTree = "<group>"; };
+		728636A118EE00FC00CAEB82 /* TPProtocolFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPProtocolFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				7276CA0918ECB4C500E65873 /* TPFactory.h */,
-				7276CA0A18ECB4C500E65873 /* TPFactory.m */,
+				728636A018EE00FC00CAEB82 /* TPProtocolFactory.h */,
+				728636A118EE00FC00CAEB82 /* TPProtocolFactory.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7286369718EDFBD500CAEB82 /* TPFactory.h in Headers */,
+				728636A218EE00FC00CAEB82 /* TPProtocolFactory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7286369F18EE001600CAEB82 /* TPFactory.m in Sources */,
+				728636A318EE00FC00CAEB82 /* TPProtocolFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
