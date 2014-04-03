@@ -109,6 +109,7 @@
 		7276CA0218ECB4C500E65873 /* TPFactory */ = {
 			isa = PBXGroup;
 			children = (
+				7276CA2718ECB70600E65873 /* src */,
 				7276CA0918ECB4C500E65873 /* TPFactory.h */,
 				7276CA0A18ECB4C500E65873 /* TPFactory.m */,
 				7276CA0318ECB4C500E65873 /* Supporting Files */,
@@ -142,6 +143,13 @@
 				7276CA1A18ECB4C500E65873 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7276CA2718ECB70600E65873 /* src */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,7 +333,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -357,7 +365,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
@@ -450,6 +458,7 @@
 				7276CA2318ECB4C500E65873 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7276CA2418ECB4C500E65873 /* Build configuration list for PBXNativeTarget "TPFactoryTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +467,7 @@
 				7276CA2618ECB4C500E65873 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
