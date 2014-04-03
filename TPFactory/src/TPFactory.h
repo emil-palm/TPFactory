@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Typo.nu. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface TPFactory : NSObject
 
 @end
