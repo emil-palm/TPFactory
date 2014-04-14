@@ -60,15 +60,4 @@
     return _classes;
 }
 
-- (Class)classForObject:(id<NSObject>)obj {
-    for (Class<TPBaseFactoryProtocol> cls in [self _classes]) {
-        if ( class_respondsToSelector(cls, @selector(canHandleObject:)) ) {
-            if ( [cls canHandleObject: obj] ) {
-                return cls;
-            }
-        }
-    }
-    return nil;
-}
-
 @end

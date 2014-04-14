@@ -42,11 +42,11 @@
 
 @implementation TPSubclassTestClass3
 + (NSInteger)priority {
-    return 1;
+    return 2;
 }
 
 + (BOOL)canHandleObject:(id<NSObject>)object {
-    return YES;
+    return NO;
 }
 
 @end

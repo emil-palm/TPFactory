@@ -33,4 +33,9 @@
     XCTAssertTrue([[_factory classes] count] > 0);
 }
 
+- (void) testClassForObject {
+    Class cls = [_factory classForObject:testingString];
+    XCTAssertTrue(cls == [TPSubclassTestClass2 class]);
+}
+
 @end
