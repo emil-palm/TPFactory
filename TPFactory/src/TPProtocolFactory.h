@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TPProtocols.h"
+#import "TPFactoryProtocols.h"
 
 typedef NS_OPTIONS(NSInteger, TPProtocolFactoryOptions) {
     TPProtocolFactoryIncludeSystemFrameworks                = 1 << 0,

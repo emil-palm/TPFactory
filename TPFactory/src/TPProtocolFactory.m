@@ -31,12 +31,12 @@
     self = [self init];
     if (self) {
         protocol = proto;
-        [self classes];
+        [self _classes];
     }
     return self;
 }
 
-- (NSDictionary *) classes {
+- (NSDictionary *) _classes {
     // Lets be lazy
     if ( !_classes ) {
         // Check that number of classes is bigger then zero, if so.
@@ -51,7 +51,7 @@
             Class *classes = (__unsafe_unretained Class *)malloc(sizeof(Class) * numClasses);
             
             // If we where able to allocate space we can continue
-            if ( _classes != NULL ) {
+            if ( classes != NULL ) {
                 // Lets copy over the list of classes into the newly allocated memory
                 numClasses = objc_getClassList(classes, numClasses);
                 
@@ -130,7 +130,7 @@
 }
 
 - (NSArray *) classesForType: (NSInteger) type {
-    return [[self classes] objectForKey:[[self class] keyForType:type]];
+    return [[self _classes] objectForKey:[self keyForType:type]];
 }
 
 - (Class)classForType:(NSInteger)type withObjects: (id<NSObject>) obj, ... __attribute__((sentinel)) {

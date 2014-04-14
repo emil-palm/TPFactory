@@ -12,6 +12,10 @@
 #import "TPFactory.h"
 static NSString const *testingString = @"TestingObject";
 
+typedef enum {
+    TPFactoryTestTypeOne,
+    TPFactoryTestTypeTwo,
+} TPFactoryTestTypes;
 
 @protocol TPTestProtocolFactoryProtocol <TPFactoryProtocol>
 @end
@@ -39,7 +43,7 @@ static NSString const *testingString = @"TestingObject";
     return 1;
 }
 + (NSInteger)factoryType {
-    return 0;
+    return TPFactoryTestTypeOne;
 }
 
 @end
@@ -56,7 +60,7 @@ static NSString const *testingString = @"TestingObject";
     return 1;
 }
 + (NSInteger)factoryType {
-    return 1;
+    return TPFactoryTestTypeOne;
 }
 
 @end
@@ -73,7 +77,23 @@ static NSString const *testingString = @"TestingObject";
 }
 
 + (NSInteger)factoryType {
+    return TPFactoryTestTypeOne;
+}
+@end
+
+@interface TPProtocolFactoryClass4 : NSObject<TPTestProtocolFactoryProtocol>
+@end
+
+@implementation TPProtocolFactoryClass4
++ (NSInteger)priority {
     return 0;
+}
++ (BOOL)canHandleObject:(id<NSObject>)object {
+    return YES;
+}
+
++ (NSInteger)factoryType {
+    return TPFactoryTestTypeTwo;
 }
 @end
 
@@ -94,12 +114,13 @@ static NSString const *testingString = @"TestingObject";
 }
 
 - (void) testRetrieveExplictClassWithoutObject {
-    Class cls = [_factory classForType:0];
+    Class cls = [_factory classForType:TPFactoryTestTypeOne];
     XCTAssertEqual(cls, [TPProtocolFactoryClass1 class], @"We should get class2");
 }
 
 - (void) testRetrieveExplicitClassWithObject {
-    Class cls = [_factory classForType:0 withObject:testingString];
+    Class cls = [_factory classForType:TPFactoryTestTypeOne
+                            withObject:testingString];
     XCTAssertEqual(cls, [TPProtocolFactoryClass3 class], @"We should get class3");
 }
 
@@ -108,5 +129,14 @@ static NSString const *testingString = @"TestingObject";
     XCTAssertTrue((NSInteger)[[items objectAtIndex:0] priority] >= (NSInteger)[[items objectAtIndex:1] priority], @"We should have GoE priority");
     XCTAssertTrue((NSInteger)[[items objectAtIndex:1] priority] >= (NSInteger)[[items objectAtIndex:2] priority], @"We should have GoE priority");
 }
+
+- (void) testDifferentFactoryType {
+    Class cls = [_factory classForType:TPFactoryTestTypeTwo];
+    NSArray *clses = [[_factory classes] objectForKey:@"1"];
+    XCTAssertTrue([clses count] == 1);
+    XCTAssertTrue((cls == [TPProtocolFactoryClass4 class]));
+}
+
+
 
 @end

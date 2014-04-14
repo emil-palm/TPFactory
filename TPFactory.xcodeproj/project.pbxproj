@@ -81,7 +81,7 @@
 		728636A018EE00FC00CAEB82 /* TPProtocolFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPProtocolFactory.h; sourceTree = "<group>"; };
 		728636A118EE00FC00CAEB82 /* TPProtocolFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPProtocolFactory.m; sourceTree = "<group>"; };
 		72AFA28018F1758C000BFD2D /* TPProtocolFactoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPProtocolFactoryTest.m; sourceTree = "<group>"; };
-		72BF7F7118F985EA00F03D74 /* TPProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPProtocols.h; sourceTree = "<group>"; };
+		72BF7F7118F985EA00F03D74 /* TPFactoryProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPFactoryProtocols.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +173,7 @@
 				7276CA0918ECB4C500E65873 /* TPFactory.h */,
 				728636A018EE00FC00CAEB82 /* TPProtocolFactory.h */,
 				728636A118EE00FC00CAEB82 /* TPProtocolFactory.m */,
-				72BF7F7118F985EA00F03D74 /* TPProtocols.h */,
+				72BF7F7118F985EA00F03D74 /* TPFactoryProtocols.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -544,6 +544,7 @@
 				726F62C518FC0565009F1FAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7276C9F318ECB4C500E65873 /* Build configuration list for PBXProject "TPFactory" */ = {
 			isa = XCConfigurationList;
