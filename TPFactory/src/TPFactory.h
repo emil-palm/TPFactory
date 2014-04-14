@@ -7,5 +7,4 @@
 //
 
 #import "TPProtocolFactory.h"
-#import "TPFactoryProtocols.h"
 #import "TPBaseFactory.h"

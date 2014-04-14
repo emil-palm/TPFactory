@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "TPBaseFactory.h"
-#import "TPFactoryProtocols.h"
 
 @protocol TPFactoryProtocol<TPBaseFactoryProtocol>
 /*

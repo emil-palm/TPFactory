@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TPFactoryProtocols.h"
-@interface TPSubclassFactory : NSObject
+#import "TPBaseFactory.h"
+@interface TPSubclassFactory : TPBaseFactory
 
 @end
