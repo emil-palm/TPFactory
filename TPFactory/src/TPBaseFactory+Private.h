@@ -15,6 +15,8 @@
     TPFactoryOptions _options;
 }
 
+extern NSString * const kClassesKey;
+
 /**
  *  Method that will initlize internal properties could be called multiple times.
  *

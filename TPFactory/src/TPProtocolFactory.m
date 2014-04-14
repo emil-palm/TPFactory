@@ -92,9 +92,9 @@
                 }
                 
                 // Copy the classes into our instance variable for later use
-                [self willChangeValueForKey:@"_classes"];
+                [self willChangeValueForKey:kClassesKey];
                 _classes = [classesConforming copy];
-                [self didChangeValueForKey:@"_classes"];
+                [self didChangeValueForKey:kClassesKey];
             }
         }
     }

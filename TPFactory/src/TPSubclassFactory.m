@@ -51,7 +51,9 @@
                         }
                     }
                 }
+                [self willChangeValueForKey:kClassesKey];
                 _classes = [classesConforming copy];
+                [self didChangeValueForKey:kClassesKey];
             }
         }
     }

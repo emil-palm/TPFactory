@@ -8,7 +8,7 @@
 #import "TPBaseFactory.h"
 #import "TPBaseFactory+Private.h"
 
-static NSString * const kClassesKey = @"_classes";
+NSString * const kClassesKey = @"_classes";
 
 @implementation TPBaseFactory
 
