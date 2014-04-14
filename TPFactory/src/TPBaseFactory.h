@@ -41,23 +41,13 @@ typedef NS_OPTIONS(NSInteger, TPFactoryOptions) {
 
 @interface TPBaseFactory : NSObject
 /**
- *  This method is used to prepare the factory with default options
+ *  Designated initilizer for all factories
  *
- *  @param proto The protocol to be used as identifier for those classes that should be present in the factory
- *
- *  @return self
- */
-- (id) initWithProtocol: (Protocol *) proto;
-
-/**
- *  This method is to used to prepare the factory for usage.
- *
- *  @param proto   The protocol to be used as identifier for those classes that should be present in the factory
- *  @param options options for the factory
+ *  @param options that should be applied to this factory instance
  *
  *  @return self
  */
-- (id) initWithProtocol: (Protocol *) proto andOptions: (TPFactoryOptions) options;
+- (id) initWithOptions: (TPFactoryOptions) options;
 
 /**
  *  Method for accessing class in factory using a certain object to find the optimal class

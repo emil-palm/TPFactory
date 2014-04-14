@@ -16,18 +16,25 @@
 @end
 
 @implementation TPSubclassFactory
-- (id)initWithClass:(Class)parentClass {
+
+- (id)initWithClass:(Class)parent {
+    return [self initWithClass:parent andOptions:TPProtocolFactoryDefaultOptions];
+}
+
+- (id)initWithClass:(Class)parent andOptions: (TPFactoryOptions) options {
     
-    self = [self init];
+    self = [self initWithOptions:options];
     @synchronized(self) {
         if ( self ) {
             protocol = objc_getProtocol("TPBaseFactoryProtocol");
+            parentClass = parent;
+            [self _classes];
         }
     }
     return self;
 }
 
-- (NSSet *) classes {
+- (NSSet *) _classes {
     if ( !_classes ) {
         NSUInteger numClasses = objc_getClassList(NULL, 0);
         if (numClasses > 0 )
@@ -40,7 +47,7 @@
                     if ( class_getSuperclass(classes[i]) == parentClass ) {
                         Class cls = classes[i];
                         if ( class_conformsToProtocol(cls, protocol) ) {
-                            [classesConforming setByAddingObject:cls];
+                            [classesConforming addObject:cls];
                         }
                     }
                 }

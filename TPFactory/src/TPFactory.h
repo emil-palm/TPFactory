@@ -6,5 +6,6 @@
 //  Copyright (c) 2014 Typo.nu. All rights reserved.
 //
 
-#import "TPProtocolFactory.h"
 #import "TPBaseFactory.h"
+#import "TPProtocolFactory.h"
+#import "TPSubclassFactory.h"

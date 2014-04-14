@@ -13,21 +13,19 @@ static NSString * const kClassesKey = @"_classes";
 @implementation TPBaseFactory
 
 - (NSSet *) _classes {
-    NSAssert([self class] == [TPBaseFactory class], @"Dont call this method directly on TPBaseFactory use a subclass");
+    NSAssert([self class] != [TPBaseFactory class], @"Dont call this method directly on TPBaseFactory use a subclass");
     return nil;
 }
 
-- (id)initWithProtocol: (Protocol *) proto {
-    return [self initWithProtocol:proto andOptions:TPProtocolFactoryDefaultOptions];
+- (id)init {
+    return [self initWithOptions:TPProtocolFactoryDefaultOptions];
 }
 
-- (id)initWithProtocol:(Protocol *)proto andOptions:(TPFactoryOptions)options {
+- (id)initWithOptions:(TPFactoryOptions)options {
     NSAssert([self class] != [TPBaseFactory class], @"Dont call this method directly on TPBaseFactory use a subclass");
-    self = [self init];
+    self = [super init];
     if (self) {
-        protocol = proto;
         _options = options;
-        
         if ( _options & TPFactoryDebugValidatePriority ) {
             [self addObserver:self
                    forKeyPath:kClassesKey
@@ -35,7 +33,6 @@ static NSString * const kClassesKey = @"_classes";
                       context:NULL];
         }
         
-        [self _classes];
     }
     return self;
 }

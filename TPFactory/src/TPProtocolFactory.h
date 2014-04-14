@@ -20,6 +20,27 @@
 
 
 @interface TPProtocolFactory : TPBaseFactory
+
+/**
+ *  This method is used to prepare the factory with default options
+ *
+ *  @param proto The protocol to be used as identifier for those classes that should be present in the factory
+ *
+ *  @return self
+ */
+- (id) initWithProtocol: (Protocol *) proto;
+
+/**
+ *  This method is to used to prepare the factory for usage.
+ *
+ *  @param proto   The protocol to be used as identifier for those classes that should be present in the factory
+ *  @param options options for the factory
+ *
+ *  @return self
+ */
+- (id) initWithProtocol: (Protocol *) proto andOptions: (TPFactoryOptions) options;
+
+
 /**
  *  Method for accessing class in factory
  *

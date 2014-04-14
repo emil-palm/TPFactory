@@ -7,12 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
-
-
-
+#import "TPSubclassFactory.h"
+#import "TPSubclassFactoryTestHelpers.h"
 
 @interface TPSubclassFactoryTest : XCTestCase {
-    
+    TPTestSubclassFactory *_factory;
 }
 @end
 
@@ -21,7 +20,7 @@
 - (void)setUp
 {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    _factory = [[TPTestSubclassFactory alloc] initWithClass:[TPSubclassTestRoot class]];
 }
 
 - (void)tearDown
@@ -30,9 +29,8 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+- (void) testNumberOfClassesInFactory {
+    XCTAssertTrue([[_factory classes] count] > 0);
 }
 
 @end

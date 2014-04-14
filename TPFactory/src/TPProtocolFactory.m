@@ -16,6 +16,20 @@
 
 @implementation TPProtocolFactory
 
+- (id)initWithProtocol:(Protocol *)proto {
+    return [self initWithProtocol:proto andOptions:TPProtocolFactoryDefaultOptions];
+}
+
+- (id)initWithProtocol:(Protocol *)proto andOptions:(TPFactoryOptions)options {
+    NSAssert([self class] != [TPBaseFactory class], @"Dont call this method directly on TPBaseFactory use a subclass");
+    self = [super initWithOptions:options];
+    if (self) {
+        protocol = proto;
+        [self _classes];
+    }
+    return self;
+}
+
 - (NSString *) keyForType: (NSInteger) type {
     return [NSString stringWithFormat:@"%d", (int)type];
 }
