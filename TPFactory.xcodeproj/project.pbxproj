@@ -179,13 +179,13 @@
 			isa = PBXGroup;
 			children = (
 				7276CA0918ECB4C500E65873 /* TPFactory.h */,
+				72CC137818FC197900C8C2B5 /* TPBaseFactory+Private.h */,
+				72CC137918FC1A3200C8C2B5 /* TPBaseFactory.h */,
+				72CC137618FC190F00C8C2B5 /* TPBaseFactory.m */,
 				728636A018EE00FC00CAEB82 /* TPProtocolFactory.h */,
 				728636A118EE00FC00CAEB82 /* TPProtocolFactory.m */,
 				72CC137218FC177500C8C2B5 /* TPSubclassFactory.h */,
 				72CC137318FC177500C8C2B5 /* TPSubclassFactory.m */,
-				72CC137818FC197900C8C2B5 /* TPBaseFactory+Private.h */,
-				72CC137918FC1A3200C8C2B5 /* TPBaseFactory.h */,
-				72CC137618FC190F00C8C2B5 /* TPBaseFactory.m */,
 			);
 			path = src;
 			sourceTree = "<group>";

@@ -8,23 +8,16 @@
 
 #import "TPProtocolFactory.h"
 #import "TPBaseFactory+Private.h"
+
+@interface TPProtocolFactory () {
+    NSDictionary *_classes;
+}
+@end
+
 @implementation TPProtocolFactory
 
 - (NSString *) keyForType: (NSInteger) type {
     return [NSString stringWithFormat:@"%d", (int)type];
-}
-
-- (id)initWithProtocol: (Protocol *) proto {
-    return [self initWithProtocol:proto andOptions:TPProtocolFactoryDefaultOptions];
-}
-
-- (id)initWithProtocol:(Protocol *)proto andOptions:(TPFactoryOptions)options {
-    self = [self init];
-    if (self) {
-        protocol = proto;
-        [self _classes];
-    }
-    return self;
 }
 
 - (NSDictionary *) _classes {
@@ -85,7 +78,9 @@
                 }
                 
                 // Copy the classes into our instance variable for later use
+                [self willChangeValueForKey:@"_classes"];
                 _classes = [classesConforming copy];
+                [self didChangeValueForKey:@"_classes"];
             }
         }
     }
@@ -135,5 +130,25 @@
         block(cls);
     }
 }
+
+- (void) validateClassPriority {
+    [[[self _classes] allKeys] enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL *stop) {
+        NSInteger type = [key integerValue];
+        NSMutableDictionary *classPriorities = [NSMutableDictionary dictionaryWithCapacity:100];
+        [self enumarateObjectsOfType:type usingBlock:^(Class cls) {
+            Class<TPBaseFactoryProtocol> correctClass = cls;
+            
+            NSString *priorityKey = [[NSNumber numberWithInteger:[correctClass priority]] stringValue];
+            Class<TPBaseFactoryProtocol> previousClass = nil;
+            if ((previousClass = [classPriorities objectForKey:priorityKey]) ) {
+                NSAssert(NO, @"WARNING! Class priority duplication between: %@ and %@ in type %d", NSStringFromClass(previousClass), correctClass, type);
+            }
+            
+            [classPriorities setObject:correctClass forKey:priorityKey];
+        }];
+    }];
+    
+}
+
 
 @end

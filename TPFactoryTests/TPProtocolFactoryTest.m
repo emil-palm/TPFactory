@@ -56,7 +56,7 @@ typedef enum {
 }
 
 + (NSInteger)priority {
-    return 1;
+    return 2;
 }
 + (NSInteger)factoryType {
     return TPFactoryTestTypeOne;
@@ -69,7 +69,7 @@ typedef enum {
 
 @implementation TPProtocolFactoryClass3
 + (NSInteger)priority {
-    return 2;
+    return 3;
 }
 + (BOOL)canHandleObject:(id<NSObject>)object {
     return [object isEqual:testingString];
@@ -114,7 +114,7 @@ typedef enum {
 
 - (void) testRetrieveExplictClassWithoutObject {
     Class cls = [_factory classForType:TPFactoryTestTypeOne];
-    XCTAssertEqual(cls, [TPProtocolFactoryClass1 class], @"We should get class2");
+    XCTAssertEqual(cls, [TPProtocolFactoryClass2 class], @"We should get class2");
 }
 
 - (void) testRetrieveExplicitClassWithObject {

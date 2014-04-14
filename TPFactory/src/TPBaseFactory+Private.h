@@ -11,8 +11,21 @@
 
 @interface TPBaseFactory () {
     @protected
-    NSDictionary *_classes;
     Protocol *protocol;
+    TPFactoryOptions _options;
 }
-- (NSDictionary *) _classes;
+
+/**
+ *  Method that will initlize internal properties could be called multiple times.
+ *
+ *  @return A object able to contain multiple classes, eg. set, dictionary and so on.
+ */
+- (id) _classes;
+
+/**
+ *  This method is called when TPFactoryDebugValidatePriority option is set and classes changes
+ *  Base implementation will loop over [self _classes] and check priority on all classes and assert if their is two of the same priority
+ *  as this might give you race conditions
+ */
+- (void) validateClassPriority;
 @end
