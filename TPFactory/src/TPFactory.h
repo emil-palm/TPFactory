@@ -6,6 +6,5 @@
 //  Copyright (c) 2014 Typo.nu. All rights reserved.
 //
 
-@interface TPFactory : NSObject
-
-@end
+#import "TPProtocolFactory.h"
+#import "TPProtocols.h"
