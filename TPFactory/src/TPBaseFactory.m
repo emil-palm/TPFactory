@@ -80,7 +80,7 @@ NSString * const kClassesKey = @"_classes";
 }
 
 - (void) validateClassPriority {
-    NSDictionary *classPriorities = [NSMutableDictionary dictionaryWithCapacity:100];
+    NSMutableDictionary *classPriorities = [NSMutableDictionary dictionaryWithCapacity:100];
     [self enumarateObjectsUsingBlock:^(Class cls) {
         Class<TPBaseFactoryProtocol> correctClass = cls;
         
@@ -89,6 +89,7 @@ NSString * const kClassesKey = @"_classes";
         if ((previousClass = [classPriorities objectForKey:priorityKey]) ) {
             NSAssert(NO, @"WARNING! Class priority duplication between: %@ and %@", NSStringFromClass(previousClass), correctClass);
         }
+        [classPriorities setObject:cls forKey:priorityKey];
     }];
 }
 
