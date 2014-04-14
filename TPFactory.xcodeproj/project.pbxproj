@@ -29,8 +29,13 @@
 		726F62C718FC05D2009F1FAE /* libTPFactory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7286367118EDF8BB00CAEB82 /* libTPFactory.a */; };
 		7286367318EDF8BB00CAEB82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7286367218EDF8BB00CAEB82 /* Foundation.framework */; };
 		7286369718EDFBD500CAEB82 /* TPFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7276CA0918ECB4C500E65873 /* TPFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		728636A218EE00FC00CAEB82 /* TPProtocolFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 728636A018EE00FC00CAEB82 /* TPProtocolFactory.h */; };
+		728636A218EE00FC00CAEB82 /* TPProtocolFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 728636A018EE00FC00CAEB82 /* TPProtocolFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		728636A318EE00FC00CAEB82 /* TPProtocolFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 728636A118EE00FC00CAEB82 /* TPProtocolFactory.m */; };
+		72CC137418FC177500C8C2B5 /* TPSubclassFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 72CC137218FC177500C8C2B5 /* TPSubclassFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72CC137518FC177500C8C2B5 /* TPSubclassFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CC137318FC177500C8C2B5 /* TPSubclassFactory.m */; };
+		72CC137718FC190F00C8C2B5 /* TPBaseFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CC137618FC190F00C8C2B5 /* TPBaseFactory.m */; };
+		72CC137A18FC1C0300C8C2B5 /* TPBaseFactory+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 72CC137818FC197900C8C2B5 /* TPBaseFactory+Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		72CC137B18FC1C1000C8C2B5 /* TPFactoryProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 72BF7F7118F985EA00F03D74 /* TPFactoryProtocols.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +87,11 @@
 		728636A118EE00FC00CAEB82 /* TPProtocolFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPProtocolFactory.m; sourceTree = "<group>"; };
 		72AFA28018F1758C000BFD2D /* TPProtocolFactoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPProtocolFactoryTest.m; sourceTree = "<group>"; };
 		72BF7F7118F985EA00F03D74 /* TPFactoryProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPFactoryProtocols.h; sourceTree = "<group>"; };
+		72CC137218FC177500C8C2B5 /* TPSubclassFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPSubclassFactory.h; sourceTree = "<group>"; };
+		72CC137318FC177500C8C2B5 /* TPSubclassFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPSubclassFactory.m; sourceTree = "<group>"; };
+		72CC137618FC190F00C8C2B5 /* TPBaseFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPBaseFactory.m; sourceTree = "<group>"; };
+		72CC137818FC197900C8C2B5 /* TPBaseFactory+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TPBaseFactory+Private.h"; sourceTree = "<group>"; };
+		72CC137918FC1A3200C8C2B5 /* TPBaseFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPBaseFactory.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,9 +181,14 @@
 			isa = PBXGroup;
 			children = (
 				7276CA0918ECB4C500E65873 /* TPFactory.h */,
+				72BF7F7118F985EA00F03D74 /* TPFactoryProtocols.h */,
 				728636A018EE00FC00CAEB82 /* TPProtocolFactory.h */,
 				728636A118EE00FC00CAEB82 /* TPProtocolFactory.m */,
-				72BF7F7118F985EA00F03D74 /* TPFactoryProtocols.h */,
+				72CC137218FC177500C8C2B5 /* TPSubclassFactory.h */,
+				72CC137318FC177500C8C2B5 /* TPSubclassFactory.m */,
+				72CC137818FC197900C8C2B5 /* TPBaseFactory+Private.h */,
+				72CC137918FC1A3200C8C2B5 /* TPBaseFactory.h */,
+				72CC137618FC190F00C8C2B5 /* TPBaseFactory.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -205,6 +220,9 @@
 			files = (
 				7286369718EDFBD500CAEB82 /* TPFactory.h in Headers */,
 				728636A218EE00FC00CAEB82 /* TPProtocolFactory.h in Headers */,
+				72CC137418FC177500C8C2B5 /* TPSubclassFactory.h in Headers */,
+				72CC137B18FC1C1000C8C2B5 /* TPFactoryProtocols.h in Headers */,
+				72CC137A18FC1C0300C8C2B5 /* TPBaseFactory+Private.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +351,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72CC137718FC190F00C8C2B5 /* TPBaseFactory.m in Sources */,
+				72CC137518FC177500C8C2B5 /* TPSubclassFactory.m in Sources */,
 				728636A318EE00FC00CAEB82 /* TPProtocolFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

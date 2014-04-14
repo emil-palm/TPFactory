@@ -7,16 +7,7 @@
 //
 
 #import "TPProtocolFactory.h"
-#import <objc/runtime.h>
-#import <objc/message.h>
-
-@interface TPProtocolFactory () {
-    NSDictionary *_classes;
-    Protocol *protocol;
-}
-@end
-
-
+#import "TPBaseFactory+Private.h"
 @implementation TPProtocolFactory
 
 - (NSString *) keyForType: (NSInteger) type {
@@ -27,7 +18,7 @@
     return [self initWithProtocol:proto andOptions:TPProtocolFactoryDefaultOptions];
 }
 
-- (id)initWithProtocol:(Protocol *)proto andOptions:(TPProtocolFactoryOptions)options {
+- (id)initWithProtocol:(Protocol *)proto andOptions:(TPFactoryOptions)options {
     self = [self init];
     if (self) {
         protocol = proto;
@@ -119,12 +110,6 @@
     }
 }
 
-- (void)enumarateObjectsOfType:(NSInteger)type usingBlock:(TPClassBlock)block {
-    for (Class cls in [self classesForType:type]) {
-        block(cls);
-    }
-}
-
 - (Class)classForType:(NSInteger)type {
     return [self classForType:type withObject:nil];
 }
@@ -142,6 +127,13 @@
     }
     va_end(args);
     return [self classForType:type withObject:arguments];
+}
+
+
+- (void)enumarateObjectsOfType:(NSInteger)type usingBlock:(TPFactoryClassBlock)block {
+    for (Class cls in [self classesForType:type]) {
+        block(cls);
+    }
 }
 
 @end

@@ -7,49 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TPBaseFactory.h"
 #import "TPFactoryProtocols.h"
 
-typedef NS_OPTIONS(NSInteger, TPProtocolFactoryOptions) {
-    TPProtocolFactoryIncludeSystemFrameworks                = 1 << 0,
-    TPProtocolFactorySortByHighestFirst                     = 1 << 1,
-    TPProtocolFactorySortByLowestFirst                      = 1 << 2,
-    TPProtocolFactoryDefaultOptions                         = TPProtocolFactoryIncludeSystemFrameworks|TPProtocolFactorySortByHighestFirst
-};
-
-@protocol TPFactoryProtocol<TPBasicFactoryProtocol>
+@protocol TPFactoryProtocol<TPBaseFactoryProtocol>
 /*
- @return a integer for sorting of the diffrent types, higher is better
+ @return A integer / enum that is 'unique' for a type of subclass you want
+ eg, a specific viewcontroller such as for viewing a single object, and another integer for
+ viewing a set of objects
  */
-+ (NSInteger) priority;
-/*
- @parameter id This is used to determain if your viewcontroller can handle that type of object
- @return BOOL if you can handle object provided.
- */
-+ (BOOL) canHandleObject: (id<NSObject>) object;
++ (NSInteger) factoryType;
 @end
 
 
-@interface TPProtocolFactory : NSObject
-
-/**
- *  This method is used to prepare the factory with default options
- *
- *  @param proto The protocol to be used as identifier for those classes that should be present in the factory
- *
- *  @return self
- */
-- (id) initWithProtocol: (Protocol *) proto;
-
-/**
-*  This method is to used to prepare the factory for usage.
-*
-*  @param proto   The protocol to be used as identifier for those classes that should be present in the factory
-*  @param options options for the factory
-*
-*  @return self
-*/
-- (id) initWithProtocol: (Protocol *) proto andOptions: (TPProtocolFactoryOptions) options;
-
+@interface TPProtocolFactory : TPBaseFactory
 /**
  *  Method for accessing class in factory
  *
@@ -85,7 +56,5 @@ typedef NS_OPTIONS(NSInteger, TPProtocolFactoryOptions) {
  *  @param type  class type
  *  @param block block to be executed with each class as argument
  */
-
-- (void) enumarateObjectsOfType:(NSInteger)type usingBlock:(TPClassBlock)block;
-
+- (void) enumarateObjectsOfType:(NSInteger)type usingBlock:(TPFactoryClassBlock)block;
 @end

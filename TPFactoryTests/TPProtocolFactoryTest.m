@@ -8,7 +8,6 @@
 
 #import <XCTest/XCTest.h>
 #import <objc/runtime.h>
-
 #import "TPFactory.h"
 static NSString const *testingString = @"TestingObject";
 
