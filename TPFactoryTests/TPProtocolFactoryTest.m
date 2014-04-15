@@ -38,17 +38,23 @@
     XCTAssertEqual(cls, [TPProtocolFactoryClass3 class], @"We should get class3");
 }
 
+- (void) testRetrieveExplicitClassWithObjects {
+    Class cls = [_factory classForType:TPFactoryTestTypeOne
+                            withObjects:testingString, nil];
+    XCTAssertEqual(cls, [TPProtocolFactoryClass5 class], @"We should get class5");
+}
+
 - (void) testPriorityDesc {
     TPTestProtocolFactory *factory = [[TPTestProtocolFactory alloc] initWithProtocol:@protocol(TPTestProtocolFactoryProtocol) andOptions:TPFactoryPrioritySortDesc];
     NSArray *items = [[factory classes] objectForKey:@"0"];
-    NSArray *order = @[NSClassFromString(@"TPProtocolFactoryClass3"),NSClassFromString(@"TPProtocolFactoryClass2"),NSClassFromString(@"TPProtocolFactoryClass1")];
+    NSArray *order = @[NSClassFromString(@"TPProtocolFactoryClass5"),NSClassFromString(@"TPProtocolFactoryClass3"),NSClassFromString(@"TPProtocolFactoryClass2"),NSClassFromString(@"TPProtocolFactoryClass1")];
     XCTAssertTrue([items isEqualToArray:order]);
 }
 
 - (void) testPriorityAsc {
     TPTestProtocolFactory *factory = [[TPTestProtocolFactory alloc] initWithProtocol:@protocol(TPTestProtocolFactoryProtocol) andOptions:TPFactoryPrioritySortAsc];
     NSArray *items = [[factory classes] objectForKey:@"0"];
-    NSArray *order = @[NSClassFromString(@"TPProtocolFactoryClass1"),NSClassFromString(@"TPProtocolFactoryClass2"),NSClassFromString(@"TPProtocolFactoryClass3")];
+    NSArray *order = @[NSClassFromString(@"TPProtocolFactoryClass1"),NSClassFromString(@"TPProtocolFactoryClass2"),NSClassFromString(@"TPProtocolFactoryClass3"),NSClassFromString(@"TPProtocolFactoryClass5")];
     XCTAssertTrue([items isEqualToArray:order]);
 }
 

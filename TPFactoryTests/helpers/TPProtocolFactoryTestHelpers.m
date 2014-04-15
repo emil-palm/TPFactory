@@ -78,4 +78,22 @@ TPPROTOCOLFACTORY_SINGELTON_DEFAULT(TPTestProtocolFactory, @protocol(TPTestProto
 }
 @end
 
+@implementation TPProtocolFactoryClass5
++ (NSInteger)priority {
+    return 4;
+}
++ (BOOL)canHandleObject:(id<NSObject>)object {
+    if ( [object isKindOfClass:[NSArray class]] ) {
+        NSArray *objects = (NSArray *)object;
+        if ( [objects count] > 0 ) {
+            return [[objects objectAtIndex:0] isEqual:testingString];
+        }
+    }
+    
+    return NO;
+}
 
++ (NSInteger)factoryType {
+    return TPFactoryTestTypeOne;
+}
+@end

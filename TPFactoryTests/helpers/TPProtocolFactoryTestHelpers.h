@@ -31,6 +31,10 @@ typedef enum {
 @interface TPProtocolFactoryClass4 : NSObject<TPTestProtocolFactoryProtocol>
 @end
 
+@interface TPProtocolFactoryClass5 : NSObject<TPTestProtocolFactoryProtocol>
+@end
+
+
 
 @interface TPTestProtocolFactory : TPProtocolFactory
 + (instancetype) shared;
