@@ -72,5 +72,9 @@
     XCTAssertTrue((firstVariable == secondVariable));
 }
 
+- (void) testCallingClassForObject {
+    XCTAssertNoThrow([_factory classForObject:nil]);    
+}
+
 
 @end

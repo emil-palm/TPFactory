@@ -163,5 +163,10 @@
     
 }
 
+- (Class)classForObject:(id<NSObject>)obj {
+    NSAssert(true, @"WWARNING: you cannot use classForObject: on protocol factories. you need to use @selector(classForType:withObject:) instead");
+    return nil;
+}
+
 
 @end
