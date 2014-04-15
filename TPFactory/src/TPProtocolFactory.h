@@ -82,7 +82,7 @@
 
 
 /**
- *  Method for accessing class in factory
+ *  Method for accessing a class of a specific type in the factory
  *
  *  @param type class type
  *
@@ -91,7 +91,7 @@
 - (Class) classForType: (NSInteger) type;
 
 /**
- *  Method for accessing class in factory using a certain object to find the optimal class
+ *  Method for accessing a class of a specific type in factory using a certain object to find the optimal class
  *
  *  @param type class type
  *  @param obj object used for evaulation
@@ -101,7 +101,7 @@
 - (Class) classForType: (NSInteger) type withObject: (id<NSObject>) obj;
 
 /**
- *  Method for accessing a class in the factory using a certain set of objects to find the optimal class
+ *  Method for accessing a class of a specific type in the factory using a certain set of objects to find the optimal class
  *
  *  @param type class type
  *  @param obj first object, nil terimnated will send array to all classes
