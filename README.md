@@ -352,11 +352,19 @@ Group: TPGroup
 Group users: [<TPDeveloper 0x*****>,<TPManager 0x*****>]
 ```
 
+## Contribute
+1. Fork it
+2. Change it
+3. Pull request it.
+
+## Issues or questions?
+Open a issue on [Github.](https://github.com/mrevilme/TPFactory/issues)
+
 ## Credits
 - [Cesar Pinto Castillo](https://github.com/jagcesar) ([@jagcesar](http://twitter.com/jagcesar)) - His help in the beginning got this project to even exist.
 - [Simon Westerlund](https://github.com/westerlund) - Simon pushed me to opensource and refactor this project from being a total mess.
 
-### Maintainers
+### Maintainers and Developers
 
 - [Emil Palm](http://github.com/mrevilme) ([@mrevilme](https://twitter.com/mrevilme))
 
