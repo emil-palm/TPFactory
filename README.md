@@ -89,13 +89,13 @@ Lets redefine our models to following:
 
 and or implementations
 
-** User **
+**User**
 ```objc
 @implementation TPUser
 @end
 ```
 
-** Developer **
+**Developer**
 ```objc
 @implementation TPDeveloper
 + (NSInteger) priority {
@@ -115,7 +115,7 @@ and or implementations
 }
 @end
 ```
-** Manager **
+**Manager**
 ```objc
 @implementation TPManager
 + (NSInteger) priority {
@@ -188,7 +188,7 @@ As the name implies instead of using subclasses to find which ones to add this w
 
 and here comes the implementations:
 
-** Developer **
+**Developer**
 ```objc
 @implementation TPDeveloper
 + (NSInteger) priority {
@@ -212,7 +212,7 @@ and here comes the implementations:
 }
 @end
 ```
-** Manager **
+**Manager**
 ```objc
 @implementation TPManager
 + (NSInteger) priority {
@@ -238,7 +238,7 @@ and here comes the implementations:
 @end
 ```
 
-** Group **
+**Group**
 ```objc
 @implementation TPGroup
 + (NSInteger) priority {
@@ -306,7 +306,7 @@ Group users: nil
 
 Lets now do some more stuff with this. Remember we didn't do anything with the group model. Thats about to change.
 
-** Group **
+**Group**
 ```objc
 #import "TPObjectFactory.h"
 
