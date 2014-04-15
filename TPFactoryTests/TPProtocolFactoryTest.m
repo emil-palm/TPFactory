@@ -76,5 +76,19 @@
     XCTAssertNoThrow([_factory classForObject:nil]);    
 }
 
+- (void) testCreateInstanceWithObjects {
+    id instance = [_factory createInstanceForType:TPFactoryTestTypeOne withObjects:testingString, nil];
+    XCTAssertEqual([instance class], [TPProtocolFactoryClass5 class], @"We should get class5");
+    XCTAssertTrue([[instance object] isEqualToArray:@[testingString]], @"we should have a array set to property");
+    
+}
+
+- (void) testCreateInstanceWithObject {
+    id instance = [_factory createInstanceForType: TPFactoryTestTypeOne withObject:testingString];
+    XCTAssertEqual([instance class], [TPProtocolFactoryClass3 class], @"We should get class3");
+    XCTAssertTrue([[instance object] isEqual:testingString], @"we should have a string set to property");
+    
+}
+
 
 @end

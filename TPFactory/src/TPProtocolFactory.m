@@ -118,6 +118,18 @@
     }
 }
 
+- (id)createInstanceForType:(NSInteger)type withObject:(id<NSObject>)obj {
+    NSAssert([self class] != [TPBaseFactory class], @"Dont call this method directly on TPBaseFactory use a subclass");
+    Class cls = [self classForType:type withObject:obj];
+    if ( cls ) {
+        id<TPBaseFactoryProtocol> instance = [[cls alloc] init];
+        [instance setObject:obj];
+        return instance;
+    } else {
+        return nil;
+    }
+}
+
 - (Class)classForType:(NSInteger)type withObjects: (id<NSObject>) obj, ... __attribute__((sentinel)) {
     va_list args;
     va_start(args, obj);
@@ -127,6 +139,17 @@
     }
     va_end(args);
     return [self classForType:type withObject:arguments];
+}
+
+- (id)createInstanceForType:(NSInteger)type withObjects: (id<NSObject>) obj, ... __attribute__((sentinel)) {
+    va_list args;
+    va_start(args, obj);
+    NSMutableArray *arguments = [NSMutableArray arrayWithCapacity:10];
+    for(; obj != nil; obj = va_arg(args, id<NSObject>)) {
+        [arguments addObject:obj];
+    }
+    va_end(args);
+    return [self createInstanceForType:type withObject:arguments];
 }
 
 
@@ -165,6 +188,16 @@
 }
 
 - (Class)classForObject:(id<NSObject>)obj {
+    NSAssert(true, @"WWARNING: you cannot use classForObject: on protocol factories. you need to use @selector(classForType:withObject:) instead");
+    return nil;
+}
+
+- (id)createInstanceForObject:(id<NSObject>)obj {
+    NSAssert(true, @"WWARNING: you cannot use classForObject: on protocol factories. you need to use @selector(classForType:withObject:) instead");
+    return nil;
+}
+
+- (id)createInstanceForObjects: (id<NSObject>) obj, ... __attribute__((sentinel)) {
     NSAssert(true, @"WWARNING: you cannot use classForObject: on protocol factories. you need to use @selector(classForType:withObject:) instead");
     return nil;
 }

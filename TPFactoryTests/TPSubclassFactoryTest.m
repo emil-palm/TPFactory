@@ -73,7 +73,7 @@
 - (void) testCreateInstanceWithObject {
     id instance = [_factory createInstanceForObject:testingString];
     XCTAssertEqual([instance class], [TPSubclassTestClass2 class], @"We should get class2");
-    XCTAssertTrue([[instance object] isEqual:testingString], @"we should have a array set to property");
+    XCTAssertTrue([[instance object] isEqual:testingString], @"we should have a string set to property");
     
 }
 

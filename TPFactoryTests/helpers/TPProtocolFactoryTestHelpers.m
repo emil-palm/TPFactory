@@ -33,6 +33,10 @@ TPPROTOCOLFACTORY_SINGELTON_DEFAULT(TPTestProtocolFactory, @protocol(TPTestProto
     return TPFactoryTestTypeOne;
 }
 
+- (void)setObject:(id<NSObject>)object {
+    
+}
+
 @end
 
 
@@ -47,6 +51,11 @@ TPPROTOCOLFACTORY_SINGELTON_DEFAULT(TPTestProtocolFactory, @protocol(TPTestProto
 + (NSInteger)factoryType {
     return TPFactoryTestTypeOne;
 }
+
+- (void)setObject:(id<NSObject>)object {
+    
+}
+
 
 @end
 
@@ -76,6 +85,11 @@ TPPROTOCOLFACTORY_SINGELTON_DEFAULT(TPTestProtocolFactory, @protocol(TPTestProto
 + (NSInteger)factoryType {
     return TPFactoryTestTypeTwo;
 }
+
+- (void)setObject:(id<NSObject>)object {
+    
+}
+
 @end
 
 @implementation TPProtocolFactoryClass5

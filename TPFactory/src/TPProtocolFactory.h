@@ -111,6 +111,27 @@
 - (Class) classForType: (NSInteger) type withObjects: (id<NSObject>) obj, ... __attribute__((sentinel));
 
 /**
+ *  Method for creating a new instance of class in factory using a object to find the optimal class
+ *
+ *  @param type class type
+ *  @param obj object used for evaulation
+ *
+ *  @return new instance of highest priozitzed and matching class that can handle the object
+ */
+- (id) createInstanceForType: (NSInteger) type withObject: (id<NSObject>) obj;
+
+/**
+ *  Method for creating a new instance of class in factory using a certain set of objects to find the optimal class
+ *
+ *  @param type class type
+ *  @param obj first object, nil terimnated will send array to all classes
+ *
+ *  @return new instance of highest priozitzed and matching class that can handle the object
+ */
+- (id) createInstanceForType: (NSInteger) type withObjects: (id<NSObject>) obj, ... __attribute__((sentinel));
+
+
+/**
  *  Metod to enumerate all classes and execute the block for each class on given type
  *
  *  @param type  class type

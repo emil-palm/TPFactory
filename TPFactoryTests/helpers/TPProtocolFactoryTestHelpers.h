@@ -26,12 +26,14 @@ typedef enum {
 @end
 
 @interface TPProtocolFactoryClass3 : NSObject<TPTestProtocolFactoryProtocol>
+@property(nonatomic,strong) id<NSObject> object;
 @end
 
 @interface TPProtocolFactoryClass4 : NSObject<TPTestProtocolFactoryProtocol>
 @end
 
 @interface TPProtocolFactoryClass5 : NSObject<TPTestProtocolFactoryProtocol>
+@property(nonatomic,strong) id<NSObject> object;
 @end
 
 
