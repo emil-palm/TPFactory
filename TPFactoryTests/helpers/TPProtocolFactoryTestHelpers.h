@@ -16,7 +16,7 @@ typedef enum {
     TPFactoryTestTypeTwo,
 } TPFactoryTestTypes;
 
-@protocol TPTestProtocolFactoryProtocol <TPFactoryProtocol>
+@protocol TPTestProtocolFactoryProtocol <TPProtocolFactoryProtocol>
 @end
 
 @interface TPProtocolFactoryClass1 : NSObject<TPTestProtocolFactoryProtocol>

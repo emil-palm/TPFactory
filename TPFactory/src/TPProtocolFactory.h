@@ -49,7 +49,7 @@
 
 
 
-@protocol TPFactoryProtocol<TPBaseFactoryProtocol>
+@protocol TPProtocolFactoryProtocol<TPBaseFactoryProtocol>
 /*
  @return A integer / enum that is 'unique' for a type of subclass you want
  eg, a specific viewcontroller such as for viewing a single object, and another integer for
