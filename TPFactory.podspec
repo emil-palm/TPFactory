@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 		   * Tested
                    DESC
 
-  s.homepage     = "http://mrevilme.github.io/TPFactory"
+  s.homepage     = "https://github.com/mrevilme/TPFactory"
   s.license      = {:type => "MIT", :file => "LICENSE" }
   s.author             = { "Emil Palm" => "emil@x86.nu" }
   s.social_media_url   = "http://twitter.com/mrevilme"
