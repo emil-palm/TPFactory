@@ -38,6 +38,7 @@
 		72CC138618FC32D500C8C2B5 /* TPProtocolFactoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AFA28018F1758C000BFD2D /* TPProtocolFactoryTest.m */; };
 		72CC138918FC334100C8C2B5 /* TPSubclassFactoryTestHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CC138818FC334100C8C2B5 /* TPSubclassFactoryTestHelpers.m */; };
 		72CC138A18FC347C00C8C2B5 /* TPSubclassFactoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 72CC137C18FC30F600C8C2B5 /* TPSubclassFactoryTest.m */; };
+		72FAFD9D18FD732D00453313 /* TPBaseFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 72CC137918FC1A3200C8C2B5 /* TPBaseFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -239,6 +240,7 @@
 				7286369718EDFBD500CAEB82 /* TPFactory.h in Headers */,
 				728636A218EE00FC00CAEB82 /* TPProtocolFactory.h in Headers */,
 				72CC137418FC177500C8C2B5 /* TPSubclassFactory.h in Headers */,
+				72FAFD9D18FD732D00453313 /* TPBaseFactory.h in Headers */,
 				72CC137A18FC1C0300C8C2B5 /* TPBaseFactory+Private.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
