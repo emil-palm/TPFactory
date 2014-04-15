@@ -33,5 +33,6 @@ typedef enum {
 
 
 @interface TPTestProtocolFactory : TPProtocolFactory
++ (instancetype) shared;
 - (NSDictionary *) classes;
 @end

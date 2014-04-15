@@ -12,6 +12,8 @@
 NSString const *testingString = @"TestingObject";
 
 @implementation TPTestProtocolFactory
+TPPROTOCOLFACTORY_SINGELTON_DEFAULT(TPTestProtocolFactory, @protocol(TPTestProtocolFactoryProtocol))
+
 - (NSDictionary *)classes {
     Ivar classesIvar = class_getInstanceVariable([self class], "_classes");
     return object_getIvar(self, classesIvar);

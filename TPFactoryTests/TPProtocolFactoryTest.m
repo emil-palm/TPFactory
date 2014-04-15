@@ -60,7 +60,11 @@
     XCTAssertTrue((cls == [TPProtocolFactoryClass4 class]));
 }
 
-
+- (void) testSingleton {
+    TPTestProtocolFactory *firstVariable = [TPTestProtocolFactory shared];
+    TPTestProtocolFactory *secondVariable = [TPTestProtocolFactory shared];
+    XCTAssertTrue((firstVariable == secondVariable));
+}
 
 
 @end

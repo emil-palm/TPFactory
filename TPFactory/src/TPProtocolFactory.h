@@ -9,6 +9,46 @@
 #import <Foundation/Foundation.h>
 #import "TPBaseFactory.h"
 
+/**
+ *  Macro to setup a singleton for a protocol factory
+ *  Just add the following to your header
+ *      + (instanceof) shared;
+ *
+ *  And call this macro inside your @implementation of factoryClass
+ *
+ *  @param factoryClass the factory class
+ *  @param protocol     The protocol to be used as identifier for those classes that should be present in the factory
+ *  @param options      Options for this instance
+ *
+ *  @return shared instance
+ */
+#define TPPROTOCOLFACTORY_SINGLETON(factoryClass, protocol, options) \
++ (factoryClass *) shared { \
+    static factoryClass *sharedInstance = nil;\
+    static dispatch_once_t onceToken; \
+    dispatch_once(&onceToken, ^{ \
+        sharedInstance = [[factoryClass alloc] initWithProtocol:protocol andOptions:options];\
+    });\
+    return sharedInstance;\
+}
+
+/**
+ *  Macro to setup a singleton for a protocol factory using default options
+ *  Just add the following to your header
+ *      + (instanceof) shared;
+ *
+ *  And call this macro inside your @implementation of factoryClass
+ *
+ *  @param factoryClass the factory class
+ *  @param protocol     The protocol to be used as identifier for those classes that should be present in the factory
+ *
+ *  @return shared instance
+ */
+#define TPPROTOCOLFACTORY_SINGELTON_DEFAULT(factoryClass, protocol) \
+    TPPROTOCOLFACTORY_SINGLETON(factoryClass, protocol, TPProtocolFactoryDefaultOptions)
+
+
+
 @protocol TPFactoryProtocol<TPBaseFactoryProtocol>
 /*
  @return A integer / enum that is 'unique' for a type of subclass you want
