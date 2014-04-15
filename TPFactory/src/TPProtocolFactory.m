@@ -82,9 +82,9 @@
                         NSInteger prioCls2 = [cls2 priority];
                         
                         if ( prioCls1 > prioCls2 )
-                            return (_options & TPFactoryPrioritySortDesc ? NSOrderedAscending : NSOrderedDescending);
+                            return (_options & TPFactoryPrioritySortAsc ? NSOrderedDescending : NSOrderedAscending );
                         else if (prioCls1 < prioCls2 )
-                            return (_options & TPFactoryPrioritySortDesc ? NSOrderedDescending : NSOrderedAscending);
+                            return (_options & TPFactoryPrioritySortAsc ? NSOrderedAscending : NSOrderedDescending );
                         else
                             return NSOrderedSame;
                     }];
