@@ -16,6 +16,14 @@
 }
 
 extern NSString * const kClassesKey;
+/**
+ *  Method used to determain if a given class is a framework class
+ *
+ *  @param cls the class you want to check against our prefix list
+ *
+ *  @return YES if its a framework otherwise NO
+ */
++ (BOOL) isFrameworkClass: (Class) cls;
 
 /**
  *  Method that will initlize internal properties could be called multiple times.

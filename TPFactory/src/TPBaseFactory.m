@@ -9,8 +9,61 @@
 #import "TPBaseFactory+Private.h"
 
 NSString * const kClassesKey = @"_classes";
+static NSSet *_frameworkPrefixes = nil;
 
 @implementation TPBaseFactory
+
++ (BOOL) isFrameworkClass: (Class) cls {
+    if ( !_frameworkPrefixes ) {
+        _frameworkPrefixes = [NSSet setWithObjects:@"AB",
+                              @"UI",
+                              @"CA",
+                              @"AC",
+                              @"AD",
+                              @"AL",
+                              @"AU",
+                              @"AV",
+                              @"CB",
+                              @"CF",
+                              @"CG",
+                              @"CI",
+                              @"CL",
+                              @"CM",
+                              @"CV",
+                              @"EA",
+                              @"EK",
+                              @"GC",
+                              @"GLK",
+                              @"JS",
+                              @"MA",
+                              @"MC",
+                              @"MF",
+                              @"MIDI",
+                              @"MK",
+                              @"MP",
+                              @"NK",
+                              @"NS",
+                              @"PK",
+                              @"QL",
+                              @"SC",
+                              @"Sec",
+                              @"SK",
+                              @"SL",
+                              @"SS",
+                              @"TW",
+                              @"UT",
+                              @"OS_",
+                              nil];
+    }
+    NSString *className = NSStringFromClass(cls);
+    __block BOOL foundFramework = NO;
+    [_frameworkPrefixes enumerateObjectsUsingBlock:^(NSString *obj, BOOL *stop) {
+        foundFramework = [className hasPrefix:obj];
+        *stop = foundFramework;
+    }];
+    
+    return foundFramework;
+}
 
 - (NSSet *) _classes {
     NSAssert([self class] != [TPBaseFactory class], @"Dont call this method directly on TPBaseFactory use a subclass");
