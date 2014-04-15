@@ -55,20 +55,22 @@
                 
                 // Let the magic begin, loop over all the classes on by one and see if they match our given protocol.
                 for (int i = 0; i < numClasses; i++) {
-                    if (class_conformsToProtocol(classes[i], protocol)) {
-                        Class cls = classes[i];
-                        // Lets create a lookup key for this class.
-                        NSString *key = [self keyForType:[classes[i] factoryType]];
-                        // If we already have a array to use we use that or we create a new also this will be able to hold all classes
-                        NSMutableArray *clsArray;
-                        if ( ![classesConforming objectForKey:key] ) {
-                            clsArray = [NSMutableArray arrayWithCapacity:numClasses];
-                            [classesConforming setObject:clsArray forKey:key];
-                        } else {
-                            clsArray = [classesConforming objectForKey:key];
+                    if ( _options & TPProtocolFactoryIncludeSystemFrameworks || ![[self class] isFrameworkClass:classes[i]] ) {
+                        if (class_conformsToProtocol(classes[i], protocol)) {
+                            Class cls = classes[i];
+                            // Lets create a lookup key for this class.
+                            NSString *key = [self keyForType:[classes[i] factoryType]];
+                            // If we already have a array to use we use that or we create a new also this will be able to hold all classes
+                            NSMutableArray *clsArray;
+                            if ( ![classesConforming objectForKey:key] ) {
+                                clsArray = [NSMutableArray arrayWithCapacity:numClasses];
+                                [classesConforming setObject:clsArray forKey:key];
+                            } else {
+                                clsArray = [classesConforming objectForKey:key];
+                            }
+                            // Lets add our class to the array so it can be used in the factory
+                            [clsArray addObject:cls];
                         }
-                        // Lets add our class to the array so it can be used in the factory
-                        [clsArray addObject:cls];
                     }
                 }
                 

@@ -82,4 +82,14 @@
     
 }
 
+- (void) testFilterFrameworkClasses {
+    TPTestSubclassFactory *factory = [[TPTestSubclassFactory alloc] initWithClass:[TPSubclassTestRoot class] andOptions:TPFactoryPrioritySortDesc];
+    XCTAssertFalse([[factory classes] containsObject:[UISubclassTestingClass1 class]]);
+}
+
+- (void) testWithFrameworkClasses {
+    XCTAssertTrue([[_factory classes] containsObject:[UISubclassTestingClass1 class]]);
+}
+
+
 @end

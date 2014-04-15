@@ -44,24 +44,26 @@
             if ( classes != NULL) {
                 numClasses = objc_getClassList(classes, (int)numClasses);
                 for (int i = 0; i < numClasses; i++) {
-                    BOOL foundParentClass = NO;
-                    BOOL isFinished = NO;
                     Class currentLoopClass = classes[i];
-                    while (!foundParentClass && !isFinished ) {
-                        Class superClass = class_getSuperclass(currentLoopClass);
-                        if ( superClass == parentClass ) {
-                            foundParentClass = YES;
-                        } else if ( superClass == [NSObject class] || superClass == nil ) {
-                            isFinished = YES;
-                        } else {
-                            currentLoopClass = superClass;
+                    if ( _options & TPProtocolFactoryIncludeSystemFrameworks || ![[self class] isFrameworkClass:currentLoopClass] ) {
+                        BOOL foundParentClass = NO;
+                        BOOL isFinished = NO;
+                        while (!foundParentClass && !isFinished ) {
+                            Class superClass = class_getSuperclass(currentLoopClass);
+                            if ( superClass == parentClass ) {
+                                foundParentClass = YES;
+                            } else if ( superClass == [NSObject class] || superClass == nil ) {
+                                isFinished = YES;
+                            } else {
+                                currentLoopClass = superClass;
+                            }
                         }
-                    }
-                    
-                    if ( foundParentClass ) {
-                        Class cls = classes[i];
-                        if ( class_conformsToProtocol(cls, protocol) ) {
-                            [classesConforming addObject:cls];
+                        
+                        if ( foundParentClass ) {
+                            Class cls = classes[i];
+                            if ( class_conformsToProtocol(cls, protocol) ) {
+                                [classesConforming addObject:cls];
+                            }
                         }
                     }
                 }

@@ -90,5 +90,16 @@
     
 }
 
+- (void) testFilterFrameworkClasses {
+    TPTestProtocolFactory *factory = [[TPTestProtocolFactory alloc] initWithProtocol:@protocol(TPTestProtocolFactoryProtocol)
+                                                                          andOptions:TPFactoryPrioritySortDesc];
+    XCTAssertFalse([[[factory classes] objectForKey:@"0"] containsObject:[UIProtocolFactoryClass5 class]]);
+}
+
+- (void) testWithFrameworkClasses {
+    XCTAssertTrue([[[_factory classes] objectForKey:@"0"] containsObject:[UIProtocolFactoryClass5 class]]);
+}
+
+
 
 @end

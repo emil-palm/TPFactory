@@ -111,3 +111,22 @@ TPPROTOCOLFACTORY_SINGELTON_DEFAULT(TPTestProtocolFactory, @protocol(TPTestProto
     return TPFactoryTestTypeOne;
 }
 @end
+
+@implementation UIProtocolFactoryClass5
+
++ (NSInteger)priority {
+    return 9;
+}
++ (BOOL)canHandleObject:(id<NSObject>)object {
+    return NO;
+}
+
++ (NSInteger)factoryType {
+    return TPFactoryTestTypeOne;
+}
+
+- (void)setObject:(id<NSObject>)object {
+    
+}
+
+@end

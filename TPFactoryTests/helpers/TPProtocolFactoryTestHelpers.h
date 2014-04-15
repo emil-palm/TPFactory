@@ -36,6 +36,10 @@ typedef enum {
 @property(nonatomic,strong) id<NSObject> object;
 @end
 
+@interface UIProtocolFactoryClass5 : NSObject<TPTestProtocolFactoryProtocol>
+@end
+
+
 
 
 @interface TPTestProtocolFactory : TPProtocolFactory

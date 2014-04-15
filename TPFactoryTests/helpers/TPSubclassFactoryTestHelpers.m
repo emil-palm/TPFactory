@@ -91,3 +91,16 @@ TPSUBCLASSFACTORY_SINGLETON(TPTestSubclassFactory, [TPSubclassTestRoot class], T
 }
 
 @end
+
+@implementation UISubclassTestingClass1
++ (NSInteger)priority {
+    return 5;
+}
+
++ (BOOL)canHandleObject:(id<NSObject>)object {
+    return NO;
+}
+
+- (void)setObject:(id<NSObject>)object {};
+
+@end
