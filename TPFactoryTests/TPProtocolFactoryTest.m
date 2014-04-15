@@ -38,11 +38,20 @@
     XCTAssertEqual(cls, [TPProtocolFactoryClass3 class], @"We should get class3");
 }
 
-- (void) testPriority {
-    NSArray *items = [[_factory classes] objectForKey:@"0"];
-    XCTAssertTrue((NSInteger)[[items objectAtIndex:0] priority] >= (NSInteger)[[items objectAtIndex:1] priority], @"We should have GoE priority");
-    XCTAssertTrue((NSInteger)[[items objectAtIndex:1] priority] >= (NSInteger)[[items objectAtIndex:2] priority], @"We should have GoE priority");
+- (void) testPriorityDesc {
+    TPTestProtocolFactory *factory = [[TPTestProtocolFactory alloc] initWithProtocol:@protocol(TPTestProtocolFactoryProtocol) andOptions:TPFactoryPrioritySortDesc];
+    NSArray *items = [[factory classes] objectForKey:@"0"];
+    NSArray *order = @[NSClassFromString(@"TPProtocolFactoryClass3"),NSClassFromString(@"TPProtocolFactoryClass2"),NSClassFromString(@"TPProtocolFactoryClass1")];
+    XCTAssertTrue([items isEqualToArray:order]);
 }
+
+- (void) testPriorityAsc {
+    TPTestProtocolFactory *factory = [[TPTestProtocolFactory alloc] initWithProtocol:@protocol(TPTestProtocolFactoryProtocol) andOptions:TPFactoryPrioritySortAsc];
+    NSArray *items = [[factory classes] objectForKey:@"0"];
+    NSArray *order = @[NSClassFromString(@"TPProtocolFactoryClass1"),NSClassFromString(@"TPProtocolFactoryClass2"),NSClassFromString(@"TPProtocolFactoryClass3")];
+    XCTAssertTrue([items isEqualToArray:order]);
+}
+
 
 - (void) testDifferentFactoryType {
     Class cls = [_factory classForType:TPFactoryTestTypeTwo];
@@ -50,6 +59,7 @@
     XCTAssertTrue([clses count] == 1);
     XCTAssertTrue((cls == [TPProtocolFactoryClass4 class]));
 }
+
 
 
 

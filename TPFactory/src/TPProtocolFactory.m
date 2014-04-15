@@ -77,18 +77,17 @@
                 
                 // So lets sort our arrays using the priority class method
                 for (NSString *clsListKey in [classesConforming allKeys]) {
-                    NSArray *clsArray = [(NSMutableArray *)[classesConforming objectForKey:clsListKey] sortedArrayUsingComparator:^NSComparisonResult(Class cls1, Class cls2) {
-                        NSInteger prioCls1 = (NSInteger)objc_msgSend(cls1, @selector(priority));
-                        NSInteger prioCls2 = (NSInteger)objc_msgSend(cls2, @selector(priority));
+                    [[classesConforming objectForKey:clsListKey] sortUsingComparator:^NSComparisonResult(Class<TPBaseFactoryProtocol> cls1, Class<TPBaseFactoryProtocol> cls2) {
+                        NSInteger prioCls1 = [cls1 priority];
+                        NSInteger prioCls2 = [cls2 priority];
                         
                         if ( prioCls1 > prioCls2 )
-                            return NSOrderedAscending;
+                            return (_options & TPFactoryPrioritySortDesc ? NSOrderedAscending : NSOrderedDescending);
                         else if (prioCls1 < prioCls2 )
-                            return NSOrderedDescending;
+                            return (_options & TPFactoryPrioritySortDesc ? NSOrderedDescending : NSOrderedAscending);
                         else
                             return NSOrderedSame;
                     }];
-                    [classesConforming setObject:clsArray forKey:clsListKey];
                 }
                 
                 // Copy the classes into our instance variable for later use

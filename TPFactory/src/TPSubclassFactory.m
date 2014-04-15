@@ -10,7 +10,7 @@
 #import "TPBaseFactory+Private.h"
 
 @interface TPSubclassFactory () {
-    NSSet *_classes;
+    NSArray *_classes;
     Class parentClass;
 }
 @end
@@ -34,12 +34,12 @@
     return self;
 }
 
-- (NSSet *) _classes {
+- (NSArray *) _classes {
     if ( !_classes ) {
         NSUInteger numClasses = objc_getClassList(NULL, 0);
         if (numClasses > 0 )
         {
-            NSMutableSet *classesConforming = [NSMutableSet setWithCapacity:numClasses];
+            NSMutableArray *classesConforming = [NSMutableArray arrayWithCapacity:numClasses];
             Class *classes = (__unsafe_unretained Class *)malloc(sizeof(Class) * numClasses);
             if ( classes != NULL) {
                 numClasses = objc_getClassList(classes, (int)numClasses);
@@ -51,6 +51,19 @@
                         }
                     }
                 }
+                
+                [classesConforming sortUsingComparator:^NSComparisonResult(Class<TPBaseFactoryProtocol> cls1, Class<TPBaseFactoryProtocol> cls2) {
+                    NSInteger prioCls1 = [cls1 priority];
+                    NSInteger prioCls2 = [cls2 priority];
+                    
+                    if ( prioCls1 > prioCls2 )
+                        return (_options & TPFactoryPrioritySortDesc ? NSOrderedAscending : NSOrderedDescending);
+                    else if (prioCls1 < prioCls2 )
+                        return (_options & TPFactoryPrioritySortDesc ? NSOrderedDescending : NSOrderedAscending);
+                    else
+                        return NSOrderedSame;
+                }];
+                
                 [self willChangeValueForKey:kClassesKey];
                 _classes = [classesConforming copy];
                 [self didChangeValueForKey:kClassesKey];

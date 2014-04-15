@@ -11,7 +11,7 @@
 
 
 @interface TPTestSubclassFactory : TPSubclassFactory
-- (NSSet *) classes;
+- (NSArray *) classes;
 @end
 
 extern NSString *testingString;
