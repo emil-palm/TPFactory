@@ -54,3 +54,20 @@ TPSUBCLASSFACTORY_SINGLETON(TPTestSubclassFactory, [TPSubclassTestRoot class], T
 
 @end
 
+@implementation TPSubclassTestClass4
++ (NSInteger)priority {
+    return 3;
+}
+
++ (BOOL)canHandleObject:(id<NSObject>)object {
+    if ( [object isKindOfClass:[NSArray class]] ) {
+        NSArray *objects = (NSArray *)object;
+        if ( [objects count] > 0 ) {
+            return [[objects objectAtIndex:0] isEqual:testingString];
+        }
+    }
+    
+    return NO;
+}
+
+@end

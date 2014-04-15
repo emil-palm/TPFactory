@@ -38,17 +38,22 @@
     XCTAssertTrue(cls == [TPSubclassTestClass2 class]);
 }
 
+- (void) testClassForObjects {
+    Class cls = [_factory classForObjects:testingString, nil];
+    XCTAssertEqual(cls, [TPSubclassTestClass4 class], @"We should get class4");
+}
+
 - (void) testPriorityDesc {
     TPTestSubclassFactory *factory = [[TPTestSubclassFactory alloc] initWithClass:[TPSubclassTestRoot class] andOptions:TPFactoryPrioritySortDesc];
     NSArray *items = [factory classes];
-    NSArray *order = @[NSClassFromString(@"TPSubclassTestClass3"),NSClassFromString(@"TPSubclassTestClass2"),NSClassFromString(@"TPSubclassTestClass1")];
+    NSArray *order = @[NSClassFromString(@"TPSubclassTestClass4"), NSClassFromString(@"TPSubclassTestClass3"),NSClassFromString(@"TPSubclassTestClass2"),NSClassFromString(@"TPSubclassTestClass1")];
     XCTAssertTrue([items isEqualToArray:order]);
 }
 
 - (void) testPriorityAsc {
     TPTestSubclassFactory *factory = [[TPTestSubclassFactory alloc] initWithClass:[TPSubclassTestRoot class] andOptions:TPFactoryPrioritySortAsc];
     NSArray *items = [factory classes];
-    NSArray *order = @[NSClassFromString(@"TPSubclassTestClass1"),NSClassFromString(@"TPSubclassTestClass2"),NSClassFromString(@"TPSubclassTestClass3")];
+    NSArray *order = @[NSClassFromString(@"TPSubclassTestClass1"),NSClassFromString(@"TPSubclassTestClass2"),NSClassFromString(@"TPSubclassTestClass3"),NSClassFromString(@"TPSubclassTestClass4")];
     XCTAssertTrue([items isEqualToArray:order]);
 }
 

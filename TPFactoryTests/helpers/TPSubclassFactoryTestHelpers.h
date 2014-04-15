@@ -28,3 +28,6 @@ extern NSString *testingString;
 
 @interface TPSubclassTestClass3 : TPSubclassTestRoot<TPBaseFactoryProtocol>
 @end
+
+@interface TPSubclassTestClass4 : TPSubclassTestRoot<TPBaseFactoryProtocol>
+@end
