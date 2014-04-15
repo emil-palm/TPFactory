@@ -63,14 +63,14 @@ TPBaseFactoryProtocol is defined as following:
 1. So say you have the following model classes
 
 ```objc
-   @interface TPUser : TPModel
-   @end
+@interface TPUser : TPModel
+@end
 
-   @interface TPManager : TPUser
-   @end
+@interface TPManager : TPUser
+@end
 
-   @interface TPDeveloper : TPUser
-   @end
+@interface TPDeveloper : TPUser
+@end
 ```
 
 2. And you want to be able to take dictionary that represents either a manager or a developer and just chuck that into the factory and get the best matching class back.
@@ -288,11 +288,12 @@ id<NSObject> developer = [[TPObjectFactory shared] createInstanceForObject:fakeD
 // Now create a instance with the manager dictionary
 id<NSObject> manager = [[TPObjectFactory shared] createInstanceForObject:fakeManagerDictionary];
 // Now create a instance with the group dictionary
-id<NSObject> group = [[TPObjectFactory shared] createInstanceForObject:fakeManagerDictionary];
+id<NSObject> group = [[TPObjectFactory shared] createInstanceForObject:fakeGroupDictionary];
 
 NSLog(@"Developer: %@", NSStringFromClass([developer class]));
 NSLog(@"Manager: %@", NSStringFromClass([manager class]));
 NSLog(@"Group: %@", NSStringFromClass([group class]));
+NSLog(@"Group users: %@", [group users]);
 ```
 Would output:
 
@@ -300,6 +301,7 @@ Would output:
 User: TPDeveloper
 Manager: TPManager
 Group: TPGroup
+Group users: nil
 ```
 
 Lets now do some more stuff with this. Remember we didn't do anything with the group model. Thats about to change.
@@ -339,6 +341,15 @@ Lets now do some more stuff with this. Remember we didn't do anything with the g
 }
 
 @end
+```
+
+Now our example above would output:
+
+```
+User: TPDeveloper
+Manager: TPManager
+Group: TPGroup
+Group users: [<TPDeveloper 0x*****>,<TPManager 0x*****>]
 ```
 
 ## Credits
