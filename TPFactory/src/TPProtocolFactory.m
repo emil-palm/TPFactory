@@ -118,14 +118,6 @@
     }
 }
 
-- (Class)classForType:(NSInteger)type {
-    return [self classForType:type withObject:nil];
-}
-
-- (NSArray *) classesForType: (NSInteger) type {
-    return [[self _classes] objectForKey:[self keyForType:type]];
-}
-
 - (Class)classForType:(NSInteger)type withObjects: (id<NSObject>) obj, ... __attribute__((sentinel)) {
     va_list args;
     va_start(args, obj);
@@ -135,6 +127,15 @@
     }
     va_end(args);
     return [self classForType:type withObject:arguments];
+}
+
+
+- (Class)classForType:(NSInteger)type {
+    return [self classForType:type withObject:nil];
+}
+
+- (NSArray *) classesForType: (NSInteger) type {
+    return [[self _classes] objectForKey:[self keyForType:type]];
 }
 
 
