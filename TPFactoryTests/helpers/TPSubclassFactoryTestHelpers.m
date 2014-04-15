@@ -10,6 +10,9 @@
 #import <objc/runtime.h>
 
 @implementation TPTestSubclassFactory
+
+TPSUBCLASSFACTORY_SINGLETON(TPTestSubclassFactory, [TPSubclassTestRoot class], TPProtocolFactoryDefaultOptions)
+
 - (NSArray *)classes {
     Ivar classesIvar = class_getInstanceVariable([self class], "_classes");
     return object_getIvar(self, classesIvar);

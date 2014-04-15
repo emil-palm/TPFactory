@@ -11,6 +11,7 @@
 
 
 @interface TPTestSubclassFactory : TPSubclassFactory
++ (instancetype) shared;
 - (NSArray *) classes;
 @end
 

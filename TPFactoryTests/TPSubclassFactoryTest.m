@@ -52,4 +52,10 @@
     XCTAssertTrue([items isEqualToArray:order]);
 }
 
+- (void) testSingleton {
+    TPTestSubclassFactory *firstVariable = [TPTestSubclassFactory shared];
+    TPTestSubclassFactory *secondVariable = [TPTestSubclassFactory shared];
+    XCTAssertTrue((firstVariable == secondVariable));
+}
+
 @end
