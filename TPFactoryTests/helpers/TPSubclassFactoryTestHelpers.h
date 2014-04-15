@@ -24,10 +24,12 @@ extern NSString *testingString;
 @end
 
 @interface TPSubclassTestClass2 : TPSubclassTestRoot<TPBaseFactoryProtocol>
+@property(nonatomic,strong) id<NSObject> object;
 @end
 
 @interface TPSubclassTestClass3 : TPSubclassTestRoot<TPBaseFactoryProtocol>
 @end
 
 @interface TPSubclassTestClass4 : TPSubclassTestRoot<TPBaseFactoryProtocol>
+@property(nonatomic,strong) id<NSObject> object;
 @end

@@ -60,6 +60,39 @@ NSString * const kClassesKey = @"_classes";
     return [self classForObject:arguments];
 }
 
+- (id)createInstanceForObject:(id<NSObject>)obj {
+    NSAssert([self class] != [TPBaseFactory class], @"Dont call this method directly on TPBaseFactory use a subclass");
+    Class foundClass = nil;
+    for (Class<TPBaseFactoryProtocol> cls in [self _classes]) {
+        if ( [cls canHandleObject: obj] ) {
+            foundClass = cls;
+            break;
+        }
+    }
+    
+    if ( foundClass ) {
+        id<TPBaseFactoryProtocol> instance = [[foundClass alloc] init];
+        [instance setObject:obj];
+        return instance;
+    } else {
+        return nil;
+    }
+}
+
+- (id)createInstanceForObjects:(id<NSObject>) obj, ... __attribute__((sentinel)) {
+    
+    NSAssert([self class] != [TPBaseFactory class], @"Dont call this method directly on TPBaseFactory use a subclass");
+    va_list args;
+    va_start(args, obj);
+    NSMutableArray *arguments = [NSMutableArray arrayWithCapacity:10];
+    for(; obj != nil; obj = va_arg(args, id<NSObject>)) {
+        [arguments addObject:obj];
+    }
+    va_end(args);
+    
+    return [self createInstanceForObject:arguments];
+}
+
 - (void)enumarateObjectsUsingBlock:(TPFactoryClassBlock)block {
     NSAssert([self class] != [TPBaseFactory class], @"Dont call this method directly on TPBaseFactory use a subclass");
     for (Class cls in [self _classes]) {

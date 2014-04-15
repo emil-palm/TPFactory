@@ -42,6 +42,17 @@ typedef NS_OPTIONS(NSInteger, TPFactoryOptions) {
  *  @return YES or NO depending if you can handle the object or not
  */
 + (BOOL) canHandleObject: (id<NSObject>) object;
+
+
+/**
+ *  Method to be used as setter by factory when using createInstanceForObject: or createInstanceForObjects:
+ *  See this as your designed setter for the object passed in canHandleObject:
+ *
+ *  @param object can be of any type depending on what you send in so always assume the worst. Should always be the same as the one
+ *  passed to you in canHandleObject:
+ */
+- (void) setObject: (id<NSObject>) object;
+
 @end
 
 
@@ -72,6 +83,24 @@ typedef NS_OPTIONS(NSInteger, TPFactoryOptions) {
  *  @return class
  */
 - (Class) classForObjects: (id<NSObject>) obj, ... __attribute__((sentinel));
+
+/**
+ *  Method for creating a new instance of class in factory using a certain set of objects to find the optimal class
+ *
+ *  @param obj object used for evaulation
+ *
+ *  @return new instance of highest priozitzed and matching class that can handle the object
+ */
+- (id) createInstanceForObject: (id<NSObject>) obj;
+
+/**
+ *  Method for creating a new instance of class in factory using a certain set of objects to find the optimal class
+ *
+ *  @param obj first object, nil terimnated will send array to all classes
+ *
+ *  @return new instance of highest priozitzed and matching class that can handle the object
+ */
+- (id) createInstanceForObjects: (id<NSObject>) obj, ... __attribute__((sentinel));
 
 /**
  *  Metod to enumerate all classes and execute the block for each class on given type

@@ -63,4 +63,18 @@
     XCTAssertTrue((firstVariable == secondVariable));
 }
 
+- (void) testCreateInstanceWithObjects {
+    id instance = [_factory createInstanceForObjects:testingString, nil];
+    XCTAssertEqual([instance class], [TPSubclassTestClass4 class], @"We should get class4");
+    XCTAssertTrue([[instance object] isEqualToArray:@[testingString]], @"we should have a array set to property");
+
+}
+
+- (void) testCreateInstanceWithObject {
+    id instance = [_factory createInstanceForObject:testingString];
+    XCTAssertEqual([instance class], [TPSubclassTestClass2 class], @"We should get class2");
+    XCTAssertTrue([[instance object] isEqual:testingString], @"we should have a array set to property");
+    
+}
+
 @end

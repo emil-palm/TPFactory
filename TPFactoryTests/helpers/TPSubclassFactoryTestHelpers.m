@@ -30,6 +30,10 @@ TPSUBCLASSFACTORY_SINGLETON(TPTestSubclassFactory, [TPSubclassTestRoot class], T
 + (BOOL)canHandleObject:(id<NSObject>)object {
     return YES;
 }
+
+- (void)setObject:(id<NSObject>)object {
+    
+}
 @end
 
 @implementation TPSubclassTestClass2
@@ -52,9 +56,14 @@ TPSUBCLASSFACTORY_SINGLETON(TPTestSubclassFactory, [TPSubclassTestRoot class], T
     return NO;
 }
 
+- (void)setObject:(id<NSObject>)object {
+    
+}
+
 @end
 
 @implementation TPSubclassTestClass4
+
 + (NSInteger)priority {
     return 3;
 }
