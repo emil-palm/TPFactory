@@ -27,13 +27,19 @@ typedef NS_OPTIONS(NSInteger, TPFactoryOptions) {
 };
 
 @protocol TPBaseFactoryProtocol <NSObject>
-/*
- @return a integer for sorting of the diffrent types, higher is better
+/**
+ *  Method that will provide the factories with the priority for this class.
+ *
+ *  @return class priority in relationship to the factory.
  */
 + (NSInteger) priority;
-/*
- @parameter id This is used to determain if your viewcontroller can handle that type of object
- @return BOOL if you can handle object provided.
+
+/**
+ *  Method that is used to determain if we can handle the provided object
+ *
+ *  @param object can be of any type depending on what you send in so always assume the worst
+ *
+ *  @return YES or NO depending if you can handle the object or not
  */
 + (BOOL) canHandleObject: (id<NSObject>) object;
 @end
