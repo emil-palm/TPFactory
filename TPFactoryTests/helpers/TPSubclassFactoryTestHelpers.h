@@ -33,3 +33,6 @@ extern NSString *testingString;
 @interface TPSubclassTestClass4 : TPSubclassTestRoot<TPBaseFactoryProtocol>
 @property(nonatomic,strong) id<NSObject> object;
 @end
+
+@interface TPSubclassTestClass5 : TPSubclassTestClass3<TPBaseFactoryProtocol>
+@end

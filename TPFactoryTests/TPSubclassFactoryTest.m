@@ -46,14 +46,14 @@
 - (void) testPriorityDesc {
     TPTestSubclassFactory *factory = [[TPTestSubclassFactory alloc] initWithClass:[TPSubclassTestRoot class] andOptions:TPFactoryPrioritySortDesc];
     NSArray *items = [factory classes];
-    NSArray *order = @[NSClassFromString(@"TPSubclassTestClass4"), NSClassFromString(@"TPSubclassTestClass3"),NSClassFromString(@"TPSubclassTestClass2"),NSClassFromString(@"TPSubclassTestClass1")];
+    NSArray *order = @[NSClassFromString(@"TPSubclassTestClass5"), NSClassFromString(@"TPSubclassTestClass4"), NSClassFromString(@"TPSubclassTestClass3"),NSClassFromString(@"TPSubclassTestClass2"),NSClassFromString(@"TPSubclassTestClass1")];
     XCTAssertTrue([items isEqualToArray:order]);
 }
 
 - (void) testPriorityAsc {
     TPTestSubclassFactory *factory = [[TPTestSubclassFactory alloc] initWithClass:[TPSubclassTestRoot class] andOptions:TPFactoryPrioritySortAsc];
     NSArray *items = [factory classes];
-    NSArray *order = @[NSClassFromString(@"TPSubclassTestClass1"),NSClassFromString(@"TPSubclassTestClass2"),NSClassFromString(@"TPSubclassTestClass3"),NSClassFromString(@"TPSubclassTestClass4")];
+    NSArray *order = @[NSClassFromString(@"TPSubclassTestClass1"),NSClassFromString(@"TPSubclassTestClass2"),NSClassFromString(@"TPSubclassTestClass3"),NSClassFromString(@"TPSubclassTestClass4"),NSClassFromString(@"TPSubclassTestClass5")];
     XCTAssertTrue([items isEqualToArray:order]);
 }
 
@@ -74,6 +74,11 @@
     id instance = [_factory createInstanceForObject:testingString];
     XCTAssertEqual([instance class], [TPSubclassTestClass2 class], @"We should get class2");
     XCTAssertTrue([[instance object] isEqual:testingString], @"we should have a string set to property");
+}
+
+- (void) testSubClassOfSubclass {
+    NSArray *classes = [_factory classes];
+    XCTAssertTrue([classes containsObject:[TPSubclassTestClass5 class]]);
     
 }
 
