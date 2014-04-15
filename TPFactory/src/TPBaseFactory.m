@@ -62,16 +62,9 @@ NSString * const kClassesKey = @"_classes";
 
 - (id)createInstanceForObject:(id<NSObject>)obj {
     NSAssert([self class] != [TPBaseFactory class], @"Dont call this method directly on TPBaseFactory use a subclass");
-    Class foundClass = nil;
-    for (Class<TPBaseFactoryProtocol> cls in [self _classes]) {
-        if ( [cls canHandleObject: obj] ) {
-            foundClass = cls;
-            break;
-        }
-    }
-    
-    if ( foundClass ) {
-        id<TPBaseFactoryProtocol> instance = [[foundClass alloc] init];
+    Class cls = [self classForObject:obj];
+    if ( cls ) {
+        id<TPBaseFactoryProtocol> instance = [[cls alloc] init];
         [instance setObject:obj];
         return instance;
     } else {
